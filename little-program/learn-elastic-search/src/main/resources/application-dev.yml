@@ -1,0 +1,10 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /learn-elastic-search
+
+elasticsearch:
+  host: 10.168.1.201:9200
+  username:
+  password:
+  basePackage:

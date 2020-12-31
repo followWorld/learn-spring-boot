@@ -1,0 +1,8 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /learn-elastic-job
+
+regCenter:
+  serverList: localhost:2181
+  namespace: wls-job

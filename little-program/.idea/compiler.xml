@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring-boot-activiti" />
+        <module name="learn-elastic-job" />
+        <module name="learn-elastic-search" />
+        <module name="learn-spring-boot" />
+        <module name="dubboProvider" />
+        <module name="dubboProvider (1)" />
+        <module name="dubboService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="dubboProvider" target="1.8" />
+      <module name="dubboProvider (1)" target="1.8" />
+      <module name="dubboService" target="1.8" />
+      <module name="learn-elastic-job" target="1.8" />
+      <module name="learn-elastic-search" target="1.8" />
+      <module name="learn-spring-boot" target="1.8" />
+      <module name="Spring-boot-activiti" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dubboProvider" options="-parameters" />
+      <module name="dubboProvider (1)" options="-parameters" />
+      <module name="dubboService" options="-parameters" />
+      <module name="learn-elastic-job" options="-parameters" />
+      <module name="learn-elastic-search" options="-parameters" />
+      <module name="learn-spring-boot" options="-parameters" />
+    </option>
+  </component>
+</project>

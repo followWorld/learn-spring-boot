@@ -1,0 +1,37 @@
+server:
+  port: 8888
+  tomcat:
+    max-swallow-size: -1
+  servlet:
+    context-path: /learn-spring-boot
+
+spring:
+  task:
+    execution:
+      thread-name-prefix: custom-thread-
+      pool:
+        core-size: 10
+        max-size: 20
+        queue-capacity: 1024
+        keep-alive: 10s
+        allow-core-thread-timeout: false
+  #    scheduling:
+  #      thread-name-prefix: task-schedule-
+  #      pool:
+  #        size: 1
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  datasource:
+    #          数据库改成自己的数据库
+    url: jdbc:mysql://10.168.1.101:3306/iot_console?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false
+    username: iot
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#mybatis plus 设置
+mybatis-plus:
+  mapper-locations: classpath*:com/learn/**/*.xml
+
+
