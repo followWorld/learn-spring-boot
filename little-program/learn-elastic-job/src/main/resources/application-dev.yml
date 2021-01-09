@@ -6,3 +6,4 @@ server:
 regCenter:
   serverList: localhost:2181
   namespace: wls-job
+  digest:

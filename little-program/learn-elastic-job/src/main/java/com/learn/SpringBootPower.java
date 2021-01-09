@@ -1,8 +1,5 @@
 package com.learn;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -11,8 +8,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.core.env.Environment;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 @ImportResource(value = "elastic-job.xml")
-@SpringBootApplication(scanBasePackages = { "com.learn" })
+@SpringBootApplication(scanBasePackages = {"com.learn"})
 public class SpringBootPower {
     private static final Logger log = LoggerFactory.getLogger(SpringBootPower.class);
 

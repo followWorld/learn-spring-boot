@@ -1,13 +1,15 @@
 package com.learn.util;
 
+import com.dangdang.ddframe.job.executor.ShardingContexts;
+import com.dangdang.ddframe.job.lite.api.listener.AbstractDistributeOnceElasticJobListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.dangdang.ddframe.job.executor.ShardingContexts;
-import com.dangdang.ddframe.job.lite.api.listener.AbstractDistributeOnceElasticJobListener;
-
 /**
- * 任务监听类 统计任务时间
+ * 任务监听类 统计任务时间,该监听器为分布式监听器
+ * TODO 暂时仅支持spring配置作业时添加监听器，后续支持api配置作业添加监听器。
+ *
+ * @author WLSH
  */
 public class JobListener extends AbstractDistributeOnceElasticJobListener {
 
@@ -27,6 +29,6 @@ public class JobListener extends AbstractDistributeOnceElasticJobListener {
     @Override
     public void doAfterJobExecutedAtLastCompleted(ShardingContexts shardingContexts) {
         long endTime = System.currentTimeMillis();
-        log.info("分布式任务监听结束，任务名：" + shardingContexts.getJobName() + ",耗时：" + (endTime - start) +"ms");
+        log.info("分布式任务监听结束，任务名：" + shardingContexts.getJobName() + ",耗时：" + (endTime - start) + "ms");
     }
 }
