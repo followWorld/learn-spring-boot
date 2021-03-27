@@ -11,16 +11,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnExpression("'${elasticsearch.host}'.length() > 0")
 public class ElasticSearchConfig {
-
-    @Bean(name = "elasticSearchCfg")
-    public ElasticSearchCfg regist(
-            @Value("${elasticsearch.host}") final String host,
-            @Value("${elasticsearch.username}") final String username,
-            @Value("${elasticsearch.password}") final String password,
-            @Value("${elasticsearch.basePackage}") final String basePackage) {
-        ElasticSearchCfg elasticSearchCfg = ElasticSearchCfg.regist(new ESProperties(host, username, password,
-                basePackage));
-        elasticSearchCfg.build();
-        return elasticSearchCfg;
-    }
+    
 }

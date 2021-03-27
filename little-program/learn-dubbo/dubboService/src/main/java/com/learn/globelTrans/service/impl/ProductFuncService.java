@@ -1,6 +1,5 @@
 package com.learn.globelTrans.service.impl;
 
-import com.dfzt.analysis.api.ProductFunDubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +12,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ProductFuncService {
-    @Autowired
-    private ProductFunDubboService productFunDubboService;
-
-
 
 }

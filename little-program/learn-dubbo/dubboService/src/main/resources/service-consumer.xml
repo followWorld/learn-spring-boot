@@ -19,9 +19,9 @@
     <dubbo:consumer check="false"/>
 
     <!-- 协议解析 -->
-    <dubbo:reference id="productFunDubboService"
-                     interface="com.dfzt.analysis.api.ProductFunDubboService"
-                     version="0.0.1"
-                     timeout="60000"/>
+<!--    <dubbo:reference id="productFunDubboService"-->
+<!--                     interface="com.dfzt.analysis.api.ProductFunDubboService"-->
+<!--                     version="0.0.1"-->
+<!--                     timeout="60000"/>-->
 
 </beans>

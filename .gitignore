@@ -1,2 +1,8 @@
 
-little-program/.idea/workspace.xml
+.idea/
+
+target/
+
+*.iml
+
+/little-program/learn-activiti/README.md
