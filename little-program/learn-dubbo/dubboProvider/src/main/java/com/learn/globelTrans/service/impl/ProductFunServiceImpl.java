@@ -1,8 +1,10 @@
 package com.learn.globelTrans.service.impl;
+import com.google.common.collect.Lists;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.learn.globelTrans.entity.ProductFun;
 import com.learn.globelTrans.entity.ProductFunDO;
 import com.learn.globelTrans.entity.ProductFunParamDO;
 import com.learn.globelTrans.mapper.ProductFunMapper;
@@ -163,5 +165,40 @@ public class ProductFunServiceImpl extends ServiceImpl<ProductFunMapper, Product
         }
         return funList;
     }
+
+    private List<ProductFunDO> convertList(List<ProductFun> list){
+        List<ProductFunDO> productFunDOlist=Lists.newArrayList();
+        for (ProductFun productFun :list) {
+        	productFunDOlist.add(convertFromProductFun(productFun));
+        }
+        return productFunDOlist;
+
+    }
+
+    private ProductFunDO convertFromProductFun(ProductFun productFun) {
+        ProductFunDO productFunDO = new ProductFunDO();
+        productFunDO.setId(productFun.getId());
+        productFunDO.setProductId(productFun.getProductId());
+        productFunDO.setUserName(productFun.getUserName());
+        productFunDO.setProtocolType(productFun.getProtocolType());
+        productFunDO.setActionType(productFun.getActionType());
+        productFunDO.setCnName(productFun.getCnName());
+        productFunDO.setEnKey(productFun.getEnKey());
+        productFunDO.setUpTopic(productFun.getUpTopic());
+        productFunDO.setDownTopic(productFun.getDownTopic());
+        productFunDO.setFunctionType(productFun.getFunctionType());
+        productFunDO.setEventType(productFun.getEventType());
+        productFunDO.setDes(productFun.getDes());
+        productFunDO.setIsUse(productFun.getIsUse());
+        productFunDO.setIsDelete(productFun.getIsDelete());
+        productFunDO.setEditableState(productFun.getEditableState());
+        productFunDO.setCreateTime(productFun.getCreateTime());
+        productFunDO.setUpdateTime(productFun.getUpdateTime());
+        productFunDO.setUpParams(productFun.getUpParams());
+        productFunDO.setDownParams(productFun.getDownParams());
+        productFunDO.setIsAsyn(productFun.getIsAsyn());
+        return productFunDO;
+    }
+
 
 }

@@ -9,7 +9,7 @@
         <version>2.1.4.RELEASE</version>
     </parent>
     <groupId>com.wls.learn</groupId>
-    <artifactId>druid-dynamic-MP</artifactId>
+    <artifactId>redis-template</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

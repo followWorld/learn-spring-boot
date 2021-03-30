@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  # activiti default configuration
+  activiti:
+    check-process-definitions: true
+    database-schema-update: true
+    history-level: full
+    process-definition-location-prefix: classpath:/process/
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/activiti?characterEncoding=UTF-8&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: boot.spring.po
+
+logging:
+  level:
+    boot:
+      spring:
+        controller: DEBUG
+    root: INFO
+  path: /home/admin/spring-activiti

@@ -6,4 +6,5 @@ server:
 regCenter:
   serverList: localhost:2181
   namespace: wls-job
+  # 注册中心凭证（可为空）
   digest:
