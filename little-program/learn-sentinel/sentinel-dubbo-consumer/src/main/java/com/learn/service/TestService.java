@@ -1,6 +1,6 @@
 package com.learn.service;
 
-import com.learn.globelTrans.service.SentinelDubboService;
+import com.learn.sentinel.service.SentinelDubboService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

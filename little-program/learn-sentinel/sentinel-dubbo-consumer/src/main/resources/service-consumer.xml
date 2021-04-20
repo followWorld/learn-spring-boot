@@ -20,7 +20,7 @@
 
     <!-- 协议解析 -->
     <dubbo:reference id="dubboService"
-                     interface="com.learn.globelTrans.service.SentinelDubboService"
+                     interface="com.learn.sentinel.service.SentinelDubboService"
                      version="0.0.1"
                      timeout="60000"/>
 

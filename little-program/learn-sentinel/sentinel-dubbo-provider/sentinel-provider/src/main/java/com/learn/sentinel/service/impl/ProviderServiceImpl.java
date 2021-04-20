@@ -1,6 +1,6 @@
-package com.learn.globelTrans.service.impl;
+package com.learn.sentinel.service.impl;
 
-import com.learn.globelTrans.service.SentinelDubboService;
+import com.learn.sentinel.service.SentinelDubboService;
 import org.springframework.stereotype.Service;
 
 /**

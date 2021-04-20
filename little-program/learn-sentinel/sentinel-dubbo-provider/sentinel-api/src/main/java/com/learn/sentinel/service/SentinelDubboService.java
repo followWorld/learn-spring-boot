@@ -1,4 +1,4 @@
-package com.learn.globelTrans.service;
+package com.learn.sentinel.service;
 
 /**
  * ClassName: <br/>
