@@ -3,12 +3,9 @@ package com.learn.globelTrans.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.dfzt.analysis.api.ProductFunDubboService;
-import com.dfzt.analysis.entity.ProductFun;
-import com.dfzt.analysis.entity.ProductFunParam;
-import com.dfzt.iot.common.page.IPage;
+import com.learn.globelTrans.entity.ProductFun;
 import com.learn.globelTrans.entity.ProductFunDO;
-import com.learn.globelTrans.entity.ProductFunParamDO;
+import com.learn.globelTrans.service.ProductFunDubboService;
 import com.learn.globelTrans.service.ProductFunParamService;
 import com.learn.globelTrans.service.ProductFunService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,17 +50,6 @@ public class ProductFunDubboServiceImpl implements ProductFunDubboService {
     }
 
     @Override
-    public IPage<ProductFun> queryStandPageList(IPage<ProductFun> page, ProductFun productFun) {
-        return null;
-    }
-
-    @Override
-    public IPage<ProductFun> querySelfPageList(IPage<ProductFun> page, ProductFun productFun) {
-        return null;
-    }
-
-
-    @Override
     public ProductFun getById(Integer id) {
         return JSONObject.parseObject(JSON.toJSONString(productFunService.getById(id)), ProductFun.class);
     }
@@ -91,64 +77,4 @@ public class ProductFunDubboServiceImpl implements ProductFunDubboService {
         return productFunParamService.deleteByFunIds(functionIds);
     }
 
-    @Override
-    public List<ProductFunParam> queryList(ProductFunParam productFunParam) {
-        ProductFunParamDO productFunParamDO = JSONObject.parseObject(JSONObject.toJSONString(productFunParam),
-                ProductFunParamDO.class);
-        List<ProductFunParamDO> productFunParamDOs = productFunParamService.queryList(productFunParamDO);
-        return JSONArray.parseArray(JSON.toJSONString(productFunParamDOs), ProductFunParam.class);
-    }
-
-    @Override
-    public IPage<ProductFunParam> queryParamPageList(IPage<ProductFunParam> page, ProductFunParam productFunParam) {
-        return null;
-    }
-
-    @Override
-    public List<ProductFunParam> querySubByParamId(Integer id) {
-        List<ProductFunParamDO> productFunParamDOs = productFunParamService.querySubByParamId(id);
-        return JSONArray.parseArray(JSON.toJSONString(productFunParamDOs), ProductFunParam.class);
-    }
-
-    @Override
-    public ProductFunParam getParamById(Integer id) {
-        ProductFunParamDO byId = productFunParamService.getById(id);
-        return JSONObject.parseObject(JSON.toJSONString(byId), ProductFunParam.class);
-    }
-
-    @Override
-    public ProductFunParam saveParam(ProductFunParam productFunParam) {
-        ProductFunParamDO productFunParamDO = JSONObject.parseObject(JSONObject.toJSONString(productFunParam),
-                ProductFunParamDO.class);
-        ProductFunParamDO productFunParamDO1 = productFunParamService.saveParam(productFunParamDO);
-        return JSONObject.parseObject(JSON.toJSONString(productFunParamDO1), ProductFunParam.class);
-    }
-
-    @Override
-    public boolean updateParamById(ProductFunParam productFunParam) {
-        ProductFunParamDO productFunParamDO = JSONObject.parseObject(JSONObject.toJSONString(productFunParam),
-                ProductFunParamDO.class);
-        return productFunParamService.updateById(productFunParamDO);
-    }
-
-    @Override
-    public List<ProductFunParam> saveOrUpdateBatchParam(List<ProductFunParam> productFunParams) {
-        List<ProductFunParamDO> productFunParamDO = JSONArray.parseArray(JSONObject.toJSONString(productFunParams),
-                ProductFunParamDO.class);
-        List<ProductFunParamDO> productFunParamDOs = productFunParamService.saveOrUpdateBatchParam(productFunParamDO);
-        return JSONArray.parseArray(JSON.toJSONString(productFunParamDOs), ProductFunParam.class);
-    }
-
-    @Override
-    public void saveSubParamByFunBatch(ProductFun productFun, ProductFunParam param) {
-        ProductFunDO productFunDO = JSONObject.parseObject(JSONObject.toJSONString(productFun), ProductFunDO.class);
-        ProductFunParamDO productFunParamDO = JSONObject.parseObject(JSONObject.toJSONString(param),
-                ProductFunParamDO.class);
-        productFunParamService.saveSubParamByFunBatch(productFunDO, productFunParamDO);
-    }
-
-    @Override
-    public boolean removeParamById(Integer id) {
-        return productFunParamService.removeById(id);
-    }
 }

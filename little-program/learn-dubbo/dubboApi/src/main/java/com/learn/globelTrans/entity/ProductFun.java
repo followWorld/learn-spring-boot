@@ -1,11 +1,7 @@
 package com.learn.globelTrans.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @Description: 用户产品功能表
@@ -13,11 +9,9 @@ import java.util.List;
  * @Date:   2020-11-19
  * @Version: V1.0
  */
-@TableName("busi_product_fun")
 public class ProductFun implements Serializable {
     private static final long serialVersionUID = 1L;
     /**功能ID*/
-    @TableId(type = IdType.AUTO)
     private Integer id;
     /**产品标识id*/
     private String productId;
@@ -46,21 +40,14 @@ public class ProductFun implements Serializable {
     /**使用状态（1-禁用,2-启用）*/
     private Integer isUse;
     /**删除状态（0：未删除，1，删除）*/
-    @TableLogic(value = "0",delval = "1")
     private Integer isDelete;
     /**可编辑状态（1：标准不可更改    2：标准部分可更改 3：自定义）*/
     private Integer editableState;
 
     /**创建时间*/
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     /**updateTime*/
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
-    @TableField(exist = false)
-    private List<ProductFunParamDO> upParams;
-    @TableField(exist = false)
-    private List<ProductFunParamDO> downParams;
 
     public Integer getId() {
         return id;
@@ -182,8 +169,6 @@ public class ProductFun implements Serializable {
         this.editableState = editableState;
     }
 
-
-
     public Date getCreateTime() {
         return createTime;
     }
@@ -198,22 +183,6 @@ public class ProductFun implements Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public List<ProductFunParamDO> getUpParams() {
-        return upParams;
-    }
-
-    public void setUpParams(List<ProductFunParamDO> upParams) {
-        this.upParams = upParams;
-    }
-
-    public List<ProductFunParamDO> getDownParams() {
-        return downParams;
-    }
-
-    public void setDownParams(List<ProductFunParamDO> downParams) {
-        this.downParams = downParams;
     }
 
     public Integer getIsAsyn() {
