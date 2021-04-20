@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="test-provider" owner="wls"/>
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry address="zookeeper://10.168.1.101:2181"/>
+    <!-- <dubbo:registry address="zookeeper://127.0.0.1:2181" /> -->
+
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20861" payload="33554432"/>
+
+<!--    <dubbo:consumer filter="-sentinel.dubbo.consumer.filter"/>-->
+
+    <dubbo:provider timeout="60000" threads="10" threadpool="fixed" loadbalance="roundrobin"/>
+
+    <dubbo:service id="providerService"
+                   interface="com.learn.globelTrans.service.SentinelDubboService" version="0.0.1"
+                   ref="providerServiceImpl"/>
+
+</beans>

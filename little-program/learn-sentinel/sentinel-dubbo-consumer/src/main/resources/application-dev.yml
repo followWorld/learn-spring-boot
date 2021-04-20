@@ -1,0 +1,28 @@
+server:
+  port: 8088
+  tomcat:
+    max-swallow-size: -1
+  servlet:
+    context-path: /learn-spring-boot
+
+spring:
+  task:
+    execution:
+      thread-name-prefix: custom-thread-
+      pool:
+        core-size: 10
+        max-size: 20
+        queue-capacity: 1024
+        keep-alive: 10s
+        allow-core-thread-timeout: false
+  #    scheduling:
+  #      thread-name-prefix: task-schedule-
+  #      pool:
+  #        size: 1
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+
+
