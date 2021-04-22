@@ -194,8 +194,6 @@ public class ProductFunServiceImpl extends ServiceImpl<ProductFunMapper, Product
         productFunDO.setEditableState(productFun.getEditableState());
         productFunDO.setCreateTime(productFun.getCreateTime());
         productFunDO.setUpdateTime(productFun.getUpdateTime());
-        productFunDO.setUpParams(productFun.getUpParams());
-        productFunDO.setDownParams(productFun.getDownParams());
         productFunDO.setIsAsyn(productFun.getIsAsyn());
         return productFunDO;
     }
