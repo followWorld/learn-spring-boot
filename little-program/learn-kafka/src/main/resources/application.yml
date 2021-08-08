@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  #============== kafka ===================
+  # 指定kafka 代理地址，可以多个
+spring:
+  application:
+    name: kafka-user
+  kafka:
+    bootstrap-servers: 39.103.166.205:9092
+
+    #=============== provider  =======================
+    producer:
+      retries: 0
+      # 每次批量发送消息的数量
+      batch-size: 16384
+      buffer-memory: 33554432
+
+      # 指定消息key和消息体的编解码方式
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
