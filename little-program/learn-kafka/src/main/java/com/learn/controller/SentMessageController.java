@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * ClassName: SentMessageController
@@ -29,6 +30,7 @@ public class SentMessageController {
                 e.printStackTrace();
             }
         }
-        return "发送完成";
+        return "发送完成" + new Date();
     }
+
 }
